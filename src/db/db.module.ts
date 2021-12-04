@@ -9,14 +9,12 @@ const MONGO_MODELS = MongooseModule.forFeature([
     collection: 'user',
   },
 ])
+
 @Global()
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://localhost/nest', {
       useNewUrlParser: true,
-      // useUnifiedTopology: true,
-      // useCreateIndex: true,
-      // useFindAndModify: false,
     }),
     MONGO_MODELS,
   ],
