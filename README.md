@@ -7,3 +7,9 @@ nest g module cats
 
 ### 集成Swagger
 文档地址： https://docs.nestjs.com/openapi/types-and-parameters
+
+### mongodb启动
+
+```shell
+mongod --dbpath /usr/local/var/mongodb --logpath /usr/local/var/log/mongodb/mongo.log --fork
+```
