@@ -17,4 +17,11 @@ export class User extends Document {
     example: '123456',
   })
   readonly password: string
+
+  @Prop()
+  @ApiProperty({
+    description: '盐值',
+    example: 'salt',
+  })
+  readonly salt?: string
 }

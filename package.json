@@ -28,6 +28,7 @@
     "@nestjs/swagger": "^5.1.5",
     "@nestx-log4js/core": "^1.5.0",
     "class-validator": "^0.13.2",
+    "crypto": "^1.0.1",
     "mongoose": "^6.0.14",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",

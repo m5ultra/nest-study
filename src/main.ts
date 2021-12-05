@@ -4,6 +4,8 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
 import { Logger } from '@nestjs/common'
 import { Log4jsLogger } from '@nestx-log4js/core'
 import { logMiddleware } from './middlewares/log.middleware'
+import { HttpExceptionFilter } from './filter/http-exception.filter'
+import { TransformInterceptor } from './interceptor/transform.interceptor'
 
 const PORT = 9527
 const Log = new Logger('main.ts')
@@ -24,6 +26,8 @@ void (async () => {
   app.useLogger(app.get(Log4jsLogger))
   // 使用Log中间键
   app.use(logMiddleware)
+  app.useGlobalInterceptors(new TransformInterceptor())
+  app.useGlobalFilters(new HttpExceptionFilter())
   await app.listen(PORT)
   Log.log(`Listen in http://localhost:${PORT}/doc`)
 })()
