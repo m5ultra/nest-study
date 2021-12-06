@@ -14,6 +14,10 @@ nest g module cats
 
 ```shell
 mongod --dbpath /usr/local/var/mongodb --logpath /usr/local/var/log/mongodb/mongo.log --fork
+ps aux | grep -v grep | grep mongod
+
+pgrep mongo
+kill pid
 ```
 
 ### 查看被占用端口
